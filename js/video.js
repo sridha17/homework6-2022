@@ -36,14 +36,14 @@ speedButton.addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	if (video.currentTime >= video.duration){
-		video.play();
+	console.log("Original location " + video.currentTime);
+	video.currentTime += 15;
+	if (video.currentTime == video.duration){
+		video.currentTime = 0;
 		console.log("Going back to beginning")
 		console.log("New location " + video.currentTime);
 	} 
 	else{
-		console.log("Original location " + video.currentTime);
-		video.currentTime = video.currentTime + 15;
 		console.log("New location " + video.currentTime);
 	}
 });
